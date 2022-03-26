@@ -1,4 +1,4 @@
-const quotes = [
+const keepUp = [
     {
     quote: '언제나 현재에 집중할 수 있다면 행복할 것이다',
     author: '사무엘존슨'
@@ -41,11 +41,11 @@ const quotes = [
     },
     ];
     
-    const quote = document.querySelector("#quotes span:first-child");
-    
-    const author = document.querySelector("#quotes span:last-child");
+const quote = document.querySelector("#quotes span:first-child");
 
-const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+const author = document.querySelector("#quotes span:last-child");
+
+const todaysQuote = keepUp[Math.floor(Math.random() * keepUp.length)];
 
 quote.innerText = todaysQuote.quote;
 
