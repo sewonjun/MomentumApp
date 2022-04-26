@@ -18,5 +18,11 @@ function paintGreeting(username){
 
 const savedUsername = localStorage.getItem("username");
 
-loginForm.addEventListener("submit", loginSubmit );
+if (savedUsername !== null){
+    loginForm.classList.add(HIDDEN_CLASS);
+    paintGreeting(savedUsername);
+} else {
+    loginForm.addEventListener("submit", loginSubmit );
+}
+
 
