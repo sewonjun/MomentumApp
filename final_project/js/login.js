@@ -15,14 +15,25 @@ function paintGreeting(username){
     namePaint.innerText=`Hello ${username}`;
     namePaint.classList.remove(HIDDEN_CLASS);
 }
-
+function formValidate(){
+    const username = nameInput.value;
+    if (username == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
 const savedUsername = localStorage.getItem("username");
 
-if (savedUsername !== null){
-    loginForm.classList.add(HIDDEN_CLASS);
-    paintGreeting(savedUsername);
+if (formValidate == false) {
+    alert("Name must be filled out");
 } else {
-    loginForm.addEventListener("submit", loginSubmit );
+    paintGreeting(savedUsername);
 }
 
+if (savedUsername === null){
+    loginForm.classList.remove(HIDDEN_CLASS);
+    loginForm.addEventListener("submit", loginSubmit);
+} else {
+    paintGreeting(savedUsername);
+}
 
