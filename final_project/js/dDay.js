@@ -4,6 +4,7 @@ const dDayForm = document.querySelector("#dDayForm");
 const dDayPaint = document.querySelector("#paintdDay");
 
 function paintLeftdays(){
+    const savedDiffDay = localStorage.getItem("leftDays");
     dDayPaint.innerText= `untill Dday ${savedDiffDay}`;
 }
 
@@ -24,13 +25,6 @@ function getDay(event){
     paintLeftdays();
 }
 
-
-const savedDiffDay = localStorage.getItem("leftDays");
-console.log(savedDiffDay);
-
-// getDay();
-// console.log(savedDay);
-// console.log(calculateDday());
 dDayForm.addEventListener("submit", getDay);
 
 
