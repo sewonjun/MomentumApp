@@ -1,21 +1,36 @@
 const dDayInput = document.querySelector("#dDay");
-const dDaySubmit = document.querySelector("#dDayBtn")
-const dDayForm = document.querySelector("#dDayForm")
+const dDaySubmit = document.querySelector("#dDayBtn");
+const dDayForm = document.querySelector("#dDayForm");
+const dDayPaint = document.querySelector("#paintdDay");
+
+function paintLeftdays(){
+    dDayPaint.innerText= `untill Dday ${savedDiffDay}`;
+}
+
 function getDay(event){
     event.preventDefault();
-    const realDay = String(dDayInput.value) ;
+    const realDay = dDayInput.value;
     localStorage.setItem("Dday", realDay); 
-    // const goalDay = new Date(Dday)
-    console.log(realDay);
-}
-const savedDay = localStorage.getItem("Dday");
-
-function calculateDday(){
+    const goalDay = new Date(realDay)
+    console.log(goalDay);
+    // const savedDay = localStorage.getItem("Dday");
     const today = new Date();
-    const Dday = new Date(savedDay)
-    console.log(Dday);
+    console.log(today);
+    const diff = goalDay - today;
+    console.log(diff);
+    const getDiffDay = Math.ceil(diff/(1000*60*60*24));
+    console.log(getDiffDay);
+    localStorage.setItem("leftDays", getDiffDay);
+    paintLeftdays();
 }
-calculateDday();
+
+
+const savedDiffDay = localStorage.getItem("leftDays");
+console.log(savedDiffDay);
+
+// getDay();
+// console.log(savedDay);
+// console.log(calculateDday());
 dDayForm.addEventListener("submit", getDay);
 
 
