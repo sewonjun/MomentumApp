@@ -53,7 +53,6 @@ function getDay(event){
     dDayForm.classList.add(HIDDEN);
     dDayPaint.classList.remove(HIDDEN);
     todayPaint.classList.remove(HIDDEN);
-
 }
 nullCheck();
 dDayForm.addEventListener("submit", getDay);
