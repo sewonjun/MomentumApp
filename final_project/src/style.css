@@ -7,3 +7,15 @@
     display: none;
 }
 
+.section0 {
+    /* position: absolute; */
+}
+
+.section {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    flex-direction: row;
+    padding: 30px;
+}
+

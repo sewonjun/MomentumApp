@@ -10,17 +10,19 @@
 </head>
 
 <body>
-    <form id="login-form">
-        <input maxlength="15" type="text" placeholder="Insert your name">
-        <input type="submit" value="Login">
-    </form>
-    <h2 class="hidden" id="greeting"></h2>
-    <div class="section1">
+    <div class="section0">
+        <form id="login-form">
+            <input maxlength="15" type="text" placeholder="Insert your name">
+            <input type="submit" value="Login">
+        </form>
+        <h2 class="hidden" id="greeting"></h2>
+    </div>
+    <div class="section section1">
         <h2>clock</h2>
         <p id="clock"></p>
     </div>
 
-    <div class="section2">
+    <div class="section section2">
         <h2>D-day</h2>
         <form id="dDayForm">
             <input type="date" id="dDay">
@@ -33,15 +35,20 @@
         </form>
     </div>
 
-    <div class="section3">
-        <h2>ToDo-List</h2>
+    <div class="section section3">
+        <h2>TODO-LIST</h2>
+        <form id="todo-form">
+            <input type="text" placeholder="Write a todo list and press enter" required />
+        </form>
+        <ul id="todo-list"></ul>
     </div>
-    <div class="section4">
+    <div class="section section4">
         <h2>Weather</h2>
     </div>
     <script src="./js/login.js"></script>
     <script src="./js/clock.js"></script>
     <script src="./js/dDay.js"></script>
+    <script src="./js/todo.js"></script>
 </body>
 
 </html>
